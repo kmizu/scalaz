@@ -23,6 +23,9 @@ object ScalazArbitrary {
   implicit def ImmutableArrayArbitrary[A : Arbitrary : ClassManifest] =
     Functor[Arbitrary].map(arbArray[A])(ImmutableArray.fromArray[A](_))
 
+  implicit def WrappedImmutableArrayArbitrary[A: Arbitrary : ClassManifest] =
+    Functor[Arbitrary].map(ImmutableArrayArbitrary[A])(ImmutableArray.wrapArray[A](_))
+
   implicit def ValueArbitrary[A](implicit fa: Arbitrary[A]): Arbitrary[Value[A]] = Functor[Arbitrary].map(fa)(a => Value(a))
   implicit def NameArbitrary[A](implicit fa: Arbitrary[A]): Arbitrary[Name[A]] = Functor[Arbitrary].map(fa)(a => Name(a))
   implicit def NeedArbitrary[A](implicit fa: Arbitrary[A]): Arbitrary[Need[A]] = Functor[Arbitrary].map(fa)(a => Need(a))
