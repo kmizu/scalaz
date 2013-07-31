@@ -270,6 +270,48 @@ object ImmutableArray extends ImmutableArrayFunctions {
     final class ofUnit(array: IA.ofUnit) extends ofImmutableArray1[Unit](array) {
       protected[this] def elemManifest = ClassManifest.Unit
     }
+
+    implicit def canBuildFrom[T](implicit m: ClassManifest[T]): CanBuildFrom[WrappedImmutableArray[_], T, WrappedImmutableArray[T]] =
+      new CanBuildFrom[WrappedImmutableArray[_], T, WrappedImmutableArray[T]] {
+        def apply(from: WrappedImmutableArray[_]): Builder[T, WrappedImmutableArray[T]] = this.apply
+
+        def apply: Builder[T, WrappedImmutableArray[T]] = ArrayBuilder.make[T]()(m).mapResult(fromArray(_))
+      }
+
+    implicit def wrappedImmutableArrayEqual[A](implicit A0: Equal[A]): Equal[WrappedImmutableArray[A]] =
+      new std.IndexedSeqEqual[A, WrappedImmutableArray[A]]{
+        def A = A0
+      }
+
+    implicit def wrappedImmutableArrayOrder[A](implicit A0: Order[A]): Order[WrappedImmutableArray[A]] =
+      new std.IndexedSeqSubOrder[A, WrappedImmutableArray[A]]{
+        def A = A0
+      }
+
+    implicit def wrappedImmutableArrayMonoid[A: ClassManifest]: Monoid[WrappedImmutableArray[A]] =
+      new Monoid[WrappedImmutableArray[A]] {
+        lazy val zero = wrapArray(ImmutableArray.fromArray(Array[A]()))
+        def append(a: WrappedImmutableArray[A], b: => WrappedImmutableArray[A]) = a ++ b
+      }
+
+    implicit val wrappedImmutableArrayInstance: Zip[WrappedImmutableArray] with Foldable[WrappedImmutableArray] =
+      new Zip[WrappedImmutableArray] with Foldable[WrappedImmutableArray] with Foldable.FromFoldr[WrappedImmutableArray] {
+        def zip[A, B](a: => WrappedImmutableArray[A], b: => WrappedImmutableArray[B]) =
+          a zip b
+        def foldRight[A, B](fa: WrappedImmutableArray[A], z: => B)(f: (A, => B) => B) =
+          fa.foldRight(z)((a, b) => f(a, b))
+        override def foldLeft[A, B](fa: WrappedImmutableArray[A], z: B)(f: (B, A) => B) =
+          fa.foldLeft(z)(f)
+        override def index[A](fa: WrappedImmutableArray[A], i: Int) =
+          fa.lift(i)
+        override def length[A](fa: WrappedImmutableArray[A]) =
+          fa.length
+        override def empty[A](fa: WrappedImmutableArray[A]) =
+          fa.isEmpty
+        override def foldLeft1Opt[A](fa: WrappedImmutableArray[A])(f: (A, A) => A) =
+          fa.reduceLeftOption(f)
+      }
+
   }
 
   sealed class ImmutableArrayCharW(val self: ImmutableArray[Char]) extends Ops[ImmutableArray[Char]] {
