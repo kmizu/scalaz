@@ -148,6 +148,22 @@ private trait MaybeTMonad[F[_]] extends Monad[MaybeT[F, ?]] with MaybeTFunctor[F
 
 }
 
+private trait MaybeTMonadRec[F[_]] extends MonadRec[MaybeT[F, ?]] with MaybeTMonad[F] {
+  implicit val F: MonadRec[F]
+
+  override final def tailRecM[A, B](f: A => MaybeT[F, A \/ B]): A => MaybeT[F, B] =
+    F.tailRecM{ a: A =>
+      F.map(f(a).run){
+        case Maybe.Empty() =>
+          \/-(Maybe.empty[B])
+        case Maybe.Just(x @ -\/(_)) =>
+          x
+        case Maybe.Just(\/-(b)) =>
+          \/-(Maybe.just(b))
+      }
+    }.andThen(MaybeT(_))
+}
+
 private trait MaybeTFoldable[F[_]] extends Foldable.FromFoldr[MaybeT[F, ?]] {
   implicit def F: Foldable[F]
 

@@ -159,11 +159,18 @@ sealed abstract class WriterTInstances6 extends WriterTInstances7 {
       implicit def F = idInstance
       implicit def W = W0
     }
+
 }
 
 sealed abstract class WriterTInstance5 extends WriterTInstances6 {
   implicit def writerTMonad[F[_], W](implicit W0: Monoid[W], F0: Monad[F]): Monad[WriterT[F, W, ?]] =
     new WriterTMonad[F, W] {
+      implicit def F = F0
+      implicit def W = W0
+    }
+
+  implicit def writerTMonadRec[F[_], W](implicit W0: Monoid[W], F0: MonadRec[F]): MonadRec[WriterT[F, W, ?]] =
+    new WriterTMonadRec[F, W] {
       implicit def F = F0
       implicit def W = W0
     }
@@ -281,6 +288,26 @@ private trait WriterTMonad[F[_], W] extends Monad[WriterT[F, W, ?]] with WriterT
 
   def bind[A, B](fa: WriterT[F, W, A])(f: A => WriterT[F, W, B]) = fa flatMap f
 }
+
+
+private trait WriterTMonadRec[F[_], W] extends MonadRec[WriterT[F, W, ?]] with WriterTMonad[F, W] {
+  implicit def F: MonadRec[F]
+
+  override def tailRecM[A, B](f: A => WriterT[F, W, A \/ B]): A => WriterT[F, W, B] = {
+    aa => WriterT(
+      F.tailRecM{ wa: (W, A) =>
+        val (w, a) = wa
+        F.map(f(a).run){
+          case (w1, -\/(a)) =>
+            -\/((W.append(w, w1), a))
+          case (w1, \/-(b)) =>
+            \/-((W.append(w, w1), b))
+        }
+      }((W.zero, aa))
+    )
+  }
+}
+
 
 private trait WriterTFoldable[F[_], W] extends Foldable.FromFoldr[WriterT[F, W, ?]] {
   implicit def F: Foldable[F]
