@@ -62,7 +62,9 @@ object build extends Build {
       val a = (baseDirectory in LocalRootProject).value.toURI.toString
       val g = "https://raw.githubusercontent.com/scalaz/scalaz/" + tagOrBranch
       s"-P:scalajs:mapSourceURI:$a->$g/"
-    }
+    },
+    jsEnv := NodeJSEnv().value,
+    scalaJSUseRhino in Global := false
   )
 
   lazy val notPublish = Seq(
@@ -353,10 +355,6 @@ object build extends Build {
     .dependsOn(core, effect, iteratee, scalacheckBinding)
     .jvmConfigure(_ dependsOn concurrent)
     .jsSettings(scalajsProjectSettings : _*)
-    .jsSettings(
-      jsEnv := NodeJSEnv().value,
-      scalaJSUseRhino in Global := false
-    )
 
   lazy val testsJVM = tests.jvm
   lazy val testsJS  = tests.js
