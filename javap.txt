@@ -1,0 +1,239 @@
+Classfile /Users/kota_mizushima/git/scalaz/tests/jvm/target/scala-2.11/test-classes/scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25.class
+  Last modified 2016/03/29; size 2441 bytes
+  MD5 checksum e2547567925bf4a06de2c0631dbaf5b6
+  Compiled from "StreamTTest.scala"
+public final class scalaz.StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25 extends scala.runtime.AbstractPartialFunction<scalaz.StreamT$Step<java.lang.String, scalaz.StreamT<java.lang.Object, java.lang.String>>, java.lang.Object> implements scala.Serializable
+  minor version: 0
+  major version: 50
+  flags: ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+Constant pool:
+   #1 = Utf8               scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25
+   #2 = Class              #1             // scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25
+   #3 = Utf8               Lscala/runtime/AbstractPartialFunction<Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;Ljava/lang/Object;>;Lscala/Serializable;
+   #4 = Utf8               scala/runtime/AbstractPartialFunction
+   #5 = Class              #4             // scala/runtime/AbstractPartialFunction
+   #6 = Utf8               scala/Serializable
+   #7 = Class              #6             // scala/Serializable
+   #8 = Utf8               StreamTTest.scala
+   #9 = Utf8               scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17
+  #10 = Class              #9             // scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17
+  #11 = Utf8               serialVersionUID
+  #12 = Utf8               J
+  #13 = Long               0l
+  #15 = Utf8               applyOrElse
+  #16 = Utf8               (Ljava/lang/Object;Lscala/Function1;)Ljava/lang/Object;
+  #17 = Utf8               scalaz/StreamT$Step
+  #18 = Class              #17            // scalaz/StreamT$Step
+  #19 = Utf8               scalaz/StreamT$Done$
+  #20 = Class              #19            // scalaz/StreamT$Done$
+  #21 = Utf8               MODULE$
+  #22 = Utf8               Lscalaz/StreamT$Done$;
+  #23 = NameAndType        #21:#22        // MODULE$:Lscalaz/StreamT$Done$;
+  #24 = Fieldref           #20.#23        // scalaz/StreamT$Done$.MODULE$:Lscalaz/StreamT$Done$;
+  #25 = Utf8               unapply
+  #26 = Utf8               (Lscalaz/StreamT$Step;)Z
+  #27 = NameAndType        #25:#26        // unapply:(Lscalaz/StreamT$Step;)Z
+  #28 = Methodref          #20.#27        // scalaz/StreamT$Done$.unapply:(Lscalaz/StreamT$Step;)Z
+  #29 = Utf8               scala/runtime/BoxesRunTime
+  #30 = Class              #29            // scala/runtime/BoxesRunTime
+  #31 = Utf8               boxToBoolean
+  #32 = Utf8               (Z)Ljava/lang/Boolean;
+  #33 = NameAndType        #31:#32        // boxToBoolean:(Z)Ljava/lang/Boolean;
+  #34 = Methodref          #30.#33        // scala/runtime/BoxesRunTime.boxToBoolean:(Z)Ljava/lang/Boolean;
+  #35 = Utf8               scala/Function1
+  #36 = Class              #35            // scala/Function1
+  #37 = Utf8               apply
+  #38 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #39 = NameAndType        #37:#38        // apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #40 = InterfaceMethodref #36.#39        // scala/Function1.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+  #41 = Utf8               this
+  #42 = Utf8               Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+  #43 = Utf8               x1
+  #44 = Utf8               Ljava/lang/Object;
+  #45 = Utf8               default
+  #46 = Utf8               Lscala/Function1;
+  #47 = Utf8               java/lang/Object
+  #48 = Class              #47            // java/lang/Object
+  #49 = Utf8               isDefinedAt
+  #50 = Utf8               Lscalaz/StreamT$Step;
+  #51 = Utf8               (Ljava/lang/Object;)Z
+  #52 = NameAndType        #49:#26        // isDefinedAt:(Lscalaz/StreamT$Step;)Z
+  #53 = Methodref          #2.#52         // scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25.isDefinedAt:(Lscalaz/StreamT$Step;)Z
+  #54 = Utf8               x
+  #55 = Utf8               (Lscalaz/StreamT$Step;Lscala/Function1;)Ljava/lang/Object;
+  #56 = NameAndType        #15:#55        // applyOrElse:(Lscalaz/StreamT$Step;Lscala/Function1;)Ljava/lang/Object;
+  #57 = Methodref          #2.#56         // scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25.applyOrElse:(Lscalaz/StreamT$Step;Lscala/Function1;)Ljava/lang/Object;
+  #58 = Utf8               <init>
+  #59 = Utf8               (Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17;)V
+  #60 = Utf8               ()V
+  #61 = NameAndType        #58:#60        // "<init>":()V
+  #62 = Methodref          #5.#61         // scala/runtime/AbstractPartialFunction."<init>":()V
+  #63 = Utf8               $outer
+  #64 = Utf8               Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17;
+  #65 = Utf8               scalaz/StreamT
+  #66 = Class              #65            // scalaz/StreamT
+  #67 = Utf8               Step
+  #68 = Utf8               Done$
+  #69 = Utf8               scalaz/StreamTTest$$anonfun$7
+  #70 = Class              #69            // scalaz/StreamTTest$$anonfun$7
+  #71 = Utf8               ConstantValue
+  #72 = Utf8               Code
+  #73 = Utf8               LocalVariableTable
+  #74 = Utf8               LineNumberTable
+  #75 = Utf8               StackMapTable
+  #76 = Utf8               Signature
+  #77 = Utf8               <A1:Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;B1:Ljava/lang/Object;>(TA1;Lscala/Function1<TA1;TB1;>;)TB1;
+  #78 = Utf8               (Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;)Z
+  #79 = Utf8               SourceFile
+  #80 = Utf8               EnclosingMethod
+  #81 = Utf8               InnerClasses
+  #82 = Utf8               ScalaInlineInfo
+  #83 = Utf8               Scala
+{
+  public static final long serialVersionUID;
+    descriptor: J
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: long 0l
+
+  public final <A1 extends scalaz.StreamT$Step<java.lang.String, scalaz.StreamT<java.lang.Object, java.lang.String>>, B1 extends java.lang.Object> B1 applyOrElse(A1, scala.Function1<A1, B1>);
+    descriptor: (Ljava/lang/Object;Lscala/Function1;)Ljava/lang/Object;
+    flags: ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=2, locals=5, args_size=3
+         0: aload_1
+         1: checkcast     #18                 // class scalaz/StreamT$Step
+         4: astore_3
+         5: getstatic     #24                 // Field scalaz/StreamT$Done$.MODULE$:Lscalaz/StreamT$Done$;
+         8: aload_3
+         9: invokevirtual #28                 // Method scalaz/StreamT$Done$.unapply:(Lscalaz/StreamT$Step;)Z
+        12: ifeq          24
+        15: iconst_1
+        16: invokestatic  #34                 // Method scala/runtime/BoxesRunTime.boxToBoolean:(Z)Ljava/lang/Boolean;
+        19: astore        4
+        21: goto          33
+        24: aload_2
+        25: aload_1
+        26: invokeinterface #40,  2           // InterfaceMethod scala/Function1.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+        31: astore        4
+        33: aload         4
+        35: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      36     0  this   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+            0      36     1    x1   Ljava/lang/Object;
+            0      36     2 default   Lscala/Function1;
+      LineNumberTable:
+        line 156: 0
+        line 157: 5
+        line 156: 24
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 24
+          locals = [ class scalaz/StreamT$Step ]
+        frame_type = 252 /* append */
+          offset_delta = 8
+          locals = [ class java/lang/Object ]
+    Signature: #77                          // <A1:Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;B1:Ljava/lang/Object;>(TA1;Lscala/Function1<TA1;TB1;>;)TB1;
+
+  public final boolean isDefinedAt(scalaz.StreamT$Step<java.lang.String, scalaz.StreamT<java.lang.Object, java.lang.String>>);
+    descriptor: (Lscalaz/StreamT$Step;)Z
+    flags: ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=2, locals=4, args_size=2
+         0: aload_1
+         1: astore_2
+         2: getstatic     #24                 // Field scalaz/StreamT$Done$.MODULE$:Lscalaz/StreamT$Done$;
+         5: aload_2
+         6: invokevirtual #28                 // Method scalaz/StreamT$Done$.unapply:(Lscalaz/StreamT$Step;)Z
+         9: ifeq          17
+        12: iconst_1
+        13: istore_3
+        14: goto          19
+        17: iconst_0
+        18: istore_3
+        19: iload_3
+        20: ireturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      21     0  this   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+            0      21     1    x1   Lscalaz/StreamT$Step;
+      LineNumberTable:
+        line 156: 0
+        line 157: 2
+        line 156: 17
+      StackMapTable: number_of_entries = 2
+        frame_type = 252 /* append */
+          offset_delta = 17
+          locals = [ class scalaz/StreamT$Step ]
+        frame_type = 252 /* append */
+          offset_delta = 1
+          locals = [ int ]
+    Signature: #78                          // (Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;)Z
+
+  public final boolean isDefinedAt(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Z
+    flags: ACC_PUBLIC, ACC_FINAL, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: checkcast     #18                 // class scalaz/StreamT$Step
+         5: invokevirtual #53                 // Method isDefinedAt:(Lscalaz/StreamT$Step;)Z
+         8: ireturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+            0       9     1     x   Ljava/lang/Object;
+      LineNumberTable:
+        line 156: 0
+
+  public final java.lang.Object applyOrElse(java.lang.Object, scala.Function1);
+    descriptor: (Ljava/lang/Object;Lscala/Function1;)Ljava/lang/Object;
+    flags: ACC_PUBLIC, ACC_FINAL, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: checkcast     #18                 // class scalaz/StreamT$Step
+         5: aload_2
+         6: invokevirtual #57                 // Method applyOrElse:(Lscalaz/StreamT$Step;Lscala/Function1;)Ljava/lang/Object;
+         9: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+            0      10     1     x   Ljava/lang/Object;
+            0      10     2 default   Lscala/Function1;
+      LineNumberTable:
+        line 156: 0
+
+  public scalaz.StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25(scalaz.StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17);
+    descriptor: (Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=2, args_size=2
+         0: aload_0
+         1: invokespecial #62                 // Method scala/runtime/AbstractPartialFunction."<init>":()V
+         4: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25;
+            0       5     1 $outer   Lscalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17;
+      LineNumberTable:
+        line 156: 0
+}
+Signature: #3                           // Lscala/runtime/AbstractPartialFunction<Lscalaz/StreamT$Step<Ljava/lang/String;Lscalaz/StreamT<Ljava/lang/Object;Ljava/lang/String;>;>;Ljava/lang/Object;>;Lscala/Serializable;
+SourceFile: "StreamTTest.scala"
+EnclosingMethod: #10.#0                 // scalaz.StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17
+InnerClasses:
+     public static abstract #67= #18 of #66; //Step=class scalaz/StreamT$Step of class scalaz/StreamT
+     public static #68= #20 of #66; //Done$=class scalaz/StreamT$Done$ of class scalaz/StreamT
+     public final #70; //class scalaz/StreamTTest$$anonfun$7
+     public final #10; //class scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17
+     public final #2; //class scalaz/StreamTTest$$anonfun$7$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$25
+Error: unknown attribute
+  ScalaInlineInfo: length = 0x1D
+   01 01 00 05 00 3A 00 3B 01 00 0F 00 10 01 00 0F
+   00 37 01 00 31 00 33 01 00 31 00 1A 01
+Error: unknown attribute
+  Scala: length = 0x0
+
